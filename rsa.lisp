@@ -91,14 +91,11 @@
 (defun generate_keys ()
 	(let* 
 		(
-		;(p (generate_random_prime))
-		(p 239)
-		(q 277)
-		;(q (generate_random_prime))
+		(p (generate_random_prime))
+		(q (generate_random_prime))
 		(n (* p q))
 		(fn (* (- p 1) (- q 1)))
-		;(e (nth (random 3) '(17 257 65537))) ;; exponents - simple Fermat numbers
-		(e 5)
+		(e (nth (random 3) '(17 257 65537))) ;; exponents - simple Fermat numbers
 		(d (mod_inverse e fn))
 		)
 		(list e d n)
